@@ -1,4 +1,7 @@
-const Songs = () => {
-  return "songs";
-};
-export default Songs;
+function Songs() {
+  return <div>
+
+  </div>
+}
+
+export default Songs
