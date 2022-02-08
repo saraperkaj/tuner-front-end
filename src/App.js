@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Songs from "./Components/Songs";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
