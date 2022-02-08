@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Router, Routes } from "react-router-dom";
+import Songs from "./Components/Songs";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <NavBar />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +21,13 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+
+      {/* work on the routes when we get more into the creation of things */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/songs" element={<Songs />} />
+      </Routes>
     </div>
   );
 }
