@@ -53,7 +53,7 @@ export default function NewSongForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("submitting");
-    axios.post(`http://localhost:8000/songs`, song).then(() => {
+    axios.post(`${URL}/songs`, song).then(() => {
       navigate("/");
     });
   };

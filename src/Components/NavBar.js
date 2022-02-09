@@ -76,10 +76,6 @@ const NavBar = () => {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -90,8 +86,9 @@ const NavBar = () => {
   };
 
   const handleHomeLogo = () => {
-    return navigate("/");
-  };
+    console.log("he")
+    navigate("/");
+  }; 
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -142,7 +139,7 @@ const NavBar = () => {
             <QueueMusicIcon />
           </Badge>
         </IconButton>
-        <p>Playlist</p>
+        <Link to="/songs" style={{textDecoration:"none", color:"black"}}>Playlist</Link>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -156,17 +153,18 @@ const NavBar = () => {
         </IconButton>
         <Link to ="/new" style={{textDecoration:"none", color:"black"}}> New Song </Link>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem >
         <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          onClick={handleHomeLogo}
         >
-          <HomeIcon />
+         <HomeIcon />
         </IconButton>
-        <p>Home</p>
+        <Link to ="/" style={{textDecoration:"none", color:"black"}}> Home </Link>
       </MenuItem>
     </Menu>
   );
@@ -203,11 +201,11 @@ const NavBar = () => {
             <IconButton
               size="large"
               edge="end"
-              aria-label="account of current user"
+              aria-label="home"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
+              onClick={handleHomeLogo}
             >
               <HomeIcon />
             </IconButton>
