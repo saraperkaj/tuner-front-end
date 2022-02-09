@@ -10,9 +10,9 @@ function SongDetails() {
 
   useEffect(() => {
     axios.get(`${URL}/songs/${id}`).then((response) => {
-      setSong(response.data).catch((error) => console.warn(error));
+      setSong(response.data);
     });
-  }, [id, URL]);
+  }, []);
 
   const handleDelete = () => {
     axios.delete(`${URL}/songs/${id}`).then(() => navigate("/songs"));
@@ -20,13 +20,13 @@ function SongDetails() {
 
   return (
     <div className="songDetail">
-      <tr>
-        <td>{song.name}</td>
-        <td>{song.artist}</td>
-        <td>{song.album}</td>
-        <td>{song.time}</td>
-        <td>{song.is_favorite ? <span>❤️</span> : null}</td>
-      </tr>
+      <div>
+        <p>{song.name}</p>
+        <p>{song.artist}</p>
+        <p>{song.album}</p>
+        <p>{song.time}</p>
+        <p>{song.is_favorite ? <span>❤️</span> : null}</p>
+      </div>
       <div className="songDetailButtons">
         <Link to={`/songs/${song.id}/edit`}>
           <button>Edit</button>
