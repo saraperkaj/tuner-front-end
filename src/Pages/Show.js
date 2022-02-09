@@ -1,4 +1,4 @@
 const Show = () => {
-  return "show";
+  return <SongDetails />;
 };
 export default Show;
