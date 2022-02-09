@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  return <nav>
-    <Link to="/">Home</Link>
-    <Link to="/songs">Songs</Link>
+  return <nav className='nav'>
+    <Link className='home-link' to="/">Home</Link> 
+    <Link className='songs-link' to="/songs">Songs</Link>
   </nav>
 };
 

@@ -17,15 +17,15 @@ function Songs() {
         <table>
           <thead>
             <tr>
-              <th>Recently Played</th>
+              <th className="songs-index">Songs</th>
             </tr>
-            </thead>
-            <tbody>
-      {songs.map((song) => {
-        return <Song key={song.id} song={song} />;
-      })}
-      </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {songs.map((song) => {
+              return <Song key={song.id} song={song} />;
+            })}
+          </tbody>
+        </table>
       </section>
     </div>
   );
