@@ -3,22 +3,25 @@ import { useState, useEffect } from "react";
 import Song from "./Song";
 
 function Songs() {
-  const URL = process.env.REACT_APP_API_URL;
+  const API = process.env.REACT_APP_API_URL;
+
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    axios.
-    get(`${URL}/songs`)
-    .then((res) =>
-    setSongs(res.data))
-  })
+    axios.get(`${API}/song`).then((response) => setSongs(response.data));
+  }, [API]);
 
-  return <div className="Songs">
-    {songs.map((song, index) => {
-      return <Song key={index} song={song} index={index} />
-    })}
+  return (
+    <div className="Songs">
+      {songs.map((song) => {
+        return <Song key={song.id} song={song} />;
+      })}
 
-  </div>
+      {/* {songs.map((song) => {
+        return <div key={song.id}>{song.name}</div>
+      })} */}
+    </div>
+  );
 }
 
-export default Songs
+export default Songs;

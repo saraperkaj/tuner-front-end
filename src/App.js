@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Songs from "./Components/Songs";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
+import Index from "./Pages/Index";
 
 function App() {
   return (
@@ -27,7 +26,7 @@ function App() {
       {/* work on the routes when we get more into the creation of things */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/songs" element={<Songs />} />
+        <Route path="/songs" element={<Index />} />
       </Routes>
     </div>
   );
