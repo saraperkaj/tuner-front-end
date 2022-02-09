@@ -86,9 +86,9 @@ const NavBar = () => {
   };
 
   const handleHomeLogo = () => {
-    console.log("he")
+    console.log("he");
     navigate("/");
-  }; 
+  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -139,7 +139,9 @@ const NavBar = () => {
             <QueueMusicIcon />
           </Badge>
         </IconButton>
-        <Link to="/songs" style={{textDecoration:"none", color:"black"}}>Playlist</Link>
+        <Link to="/songs" style={{ textDecoration: "none", color: "black" }}>
+          Playlist
+        </Link>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -151,9 +153,12 @@ const NavBar = () => {
             <PlaylistAddIcon />
           </Badge>
         </IconButton>
-        <Link to ="/new" style={{textDecoration:"none", color:"black"}}> New Song </Link>
+        <Link to="/new" style={{ textDecoration: "none", color: "black" }}>
+          {" "}
+          New Song{" "}
+        </Link>
       </MenuItem>
-      <MenuItem >
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -162,9 +167,12 @@ const NavBar = () => {
           color="inherit"
           onClick={handleHomeLogo}
         >
-         <HomeIcon />
+          <HomeIcon />
         </IconButton>
-        <Link to ="/" style={{textDecoration:"none", color:"black"}}> Home </Link>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+          {" "}
+          Home{" "}
+        </Link>
       </MenuItem>
     </Menu>
   );
