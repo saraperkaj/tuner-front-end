@@ -5,7 +5,9 @@ function Song({ song }) {
     <tr className="song-list">
       <td>
         {" "}
-        <img src={play} width="50" alt={play} />
+        <button>
+          <img src={play} width="50" alt={play} />
+        </button>
       </td>
       <td className="song">{song.name}</td>
       <td className="song">{song.artist}</td>
