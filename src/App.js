@@ -1,13 +1,17 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Route, Router, Routes } from "react-router-dom";
+
+import { Route, Routes } from "react-router-dom";
 import Songs from "./Components/Songs";
 import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
+import FootBar from "./Components/FootBar";
+import New from "./Pages/New";
+
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
+    <div>
+       <NavBar />
+
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,7 +31,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs />} />
+        <Route path="/new" element={<New />} />
+
       </Routes>
+      <FootBar />
+ 
     </div>
   );
 }
