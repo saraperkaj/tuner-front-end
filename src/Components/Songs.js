@@ -8,7 +8,7 @@ function Songs() {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    axios.get(`${API}/songs`).then((response) => setSongs(response.data));
+    axios.get(`${API}/song`).then((response) => setSongs(response.data));
   }, [API]);
 
   return (
@@ -19,13 +19,13 @@ function Songs() {
             <tr>
               <th>Recently Played</th>
             </tr>
-            </thead>
-            <tbody>
-      {songs.map((song) => {
-        return <Song key={song.id} song={song} />;
-      })}
-      </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {songs.map((song) => {
+              return <Song key={song.id} song={song} />;
+            })}
+          </tbody>
+        </table>
       </section>
     </div>
   );
