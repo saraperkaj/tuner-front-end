@@ -12,19 +12,31 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
-import QueueMusicIcon from "@mui/icons-material/QueueMusic";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+
 import { createTheme, useTheme, ThemeProvider } from "@mui/material";
-import { Link } from "react-router-dom";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
+// import { makeStyles} from "@mui/styles";
+
 //Importing medias from assets
 import AppLogo from "../Assets/appLogo.png";
 
 //React Router
 import { useNavigate } from "react-router-dom";
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
-    mode: "dark",
+    primary: {
+      light: "#121212",
+      main: "#121212",
+      dark: "#121212",
+      contrastText: "#121212",
+    },
+    secondary: {
+      light: "#121212",
+      main: "#f44336",
+      dark: "#ba000d",
+      contrastText: "#000",
+    },
   },
 });
 
@@ -68,13 +80,28 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const NavBar = () => {
+const FootBar = () => {
+  //     const theme = useTheme();
+
+  // const useStyle = makeStyles(() => ({
+  //     footer: {
+  //       background: "green",
+  //     },
+
+  //   }));
+
+  //   const classes = useStyle();
+
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -86,8 +113,7 @@ const NavBar = () => {
   };
 
   const handleHomeLogo = () => {
-    console.log("he");
-    navigate("/");
+    return navigate("/");
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -133,103 +159,72 @@ const NavBar = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="success">
-            <QueueMusicIcon />
-          </Badge>
-        </IconButton>
-        <Link to="/songs" style={{ textDecoration: "none", color: "black" }}>
-          Playlist
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={3} color="success">
-            <PlaylistAddIcon />
-          </Badge>
-        </IconButton>
-        <Link to="/new" style={{ textDecoration: "none", color: "black" }}>
-          {" "}
-          New Song{" "}
-        </Link>
-      </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-          onClick={handleHomeLogo}
         >
           <HomeIcon />
         </IconButton>
-        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-          {" "}
-          Home{" "}
-        </Link>
+        <p>Home</p>
       </MenuItem>
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: "#7B79C6" }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            {" "}
-            Welcome
-          </Typography>
-
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <QueueMusicIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <PlaylistAddIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="home"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              color="inherit"
-              onClick={handleHomeLogo}
-            >
-              <HomeIcon />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
+      <AppBar
+        position="fixed"
+        sx={{ top: "auto", bottom: 0, height: 80, background: "#7B79C6" }}
+      >
+        <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
+          <IconButton
+            aria-label="footer-home"
+            aria-controls="footer-home"
+            aria-haspopup="true"
+            color="inherit"
+            sx={{ display: "block", margin: 0 }}
+          >
+            <HomeIcon
+              color="disabled"
+              fontSize="large"
+              sx={{ color: "white" }}
+            />
+            <Typography variant="subtitle1">Home</Typography>
+          </IconButton>
+          <IconButton
+            size="large"
+            aria-label="footer-search"
+            aria-controls="footer-search"
+            aria-haspopup="true"
+            color="inherit"
+            sx={{ display: "block", margin: 0 }}
+          >
+            <SearchIcon
+              color="disabled"
+              fontSize="large"
+              sx={{ color: "white" }}
+            />
+            <Typography variant="subtitle1">Search</Typography>
+          </IconButton>
+          <IconButton
+            size="large"
+            aria-label="footer-library"
+            aria-controls="footer-library"
+            aria-haspopup="true"
+            color="inherit"
+            sx={{ display: "block", margin: 0 }}
+          >
+            <LibraryMusicIcon
+              color="disabled"
+              fontSize="large"
+              sx={{ color: "white" }}
+            />
+            <Typography variant="subtitle1">Library</Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
@@ -238,4 +233,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default FootBar;

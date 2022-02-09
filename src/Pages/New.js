@@ -1,4 +1,6 @@
+import NewSongForm from "../Components/NewSongForm";
+
 const New = () => {
-  return "New song? New playlist?";
+  return (<NewSongForm />)
 };
 export default New;
