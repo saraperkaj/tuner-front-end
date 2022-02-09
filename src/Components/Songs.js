@@ -12,14 +12,21 @@ function Songs() {
   }, [API]);
 
   return (
-    <div className="Songs">
+    <div className="songs">
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Recently Played</th>
+            </tr>
+            </thead>
+            <tbody>
       {songs.map((song) => {
         return <Song key={song.id} song={song} />;
       })}
-
-      {/* {songs.map((song) => {
-        return <div key={song.id}>{song.name}</div>
-      })} */}
+      </tbody>
+      </table>
+      </section>
     </div>
   );
 }

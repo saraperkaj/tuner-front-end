@@ -1,8 +1,11 @@
 function Song({ song }) {
   return (
-    <div>
-      {song.name} {song.artist} {song.album} {song.time}
-    </div>
+    <tr className="song">
+      <td>{song.name}</td>
+      <td>{song.artist}</td> 
+      <td>{song.album}</td>
+      <td>{song.time}</td>
+    </tr>
   );
 }
 export default Song;
