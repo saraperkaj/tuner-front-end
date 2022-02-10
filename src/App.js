@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom";
 import Songs from "./Components/Songs";
 import NavBar from "./Components/NavBar";
@@ -7,11 +6,12 @@ import FootBar from "./Components/FootBar";
 import New from "./Pages/New";
 import Search from "./Pages/Search";
 
+import Show from "./Pages/Show";
 
 function App() {
   return (
     <div>
-       <NavBar />
+      <NavBar />
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -34,10 +34,9 @@ function App() {
         <Route path="/songs" element={<Songs />} />
         <Route path="/new" element={<New />} />
         <Route path="/search" element={<Search />} />
-
+        <Route path="/songs/:id" element={<Show />} />
       </Routes>
       <FootBar />
- 
     </div>
   );
 }
