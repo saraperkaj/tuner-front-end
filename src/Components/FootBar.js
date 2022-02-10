@@ -19,7 +19,7 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 
 //Importing medias from assets
 import AppLogo from "../Assets/appLogo.png"
-
+ 
 
 //React Router
 import { useNavigate } from 'react-router-dom';
