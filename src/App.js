@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import FootBar from "./Components/FootBar";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/songs" element={<Songs />} />
         <Route path="/new" element={<New />} />
         <Route path="/songs/:id" element={<Show />} />
+        <Route path="/songs/:id/edit" element={<Edit />} />
       </Routes>
       <FootBar />
     </div>
