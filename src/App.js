@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import FootBar from "./Components/FootBar";
 import New from "./Pages/New";
 import Search from "./Pages/Search";
-
+// import "../src/App.css"
 import Show from "./Pages/Show";
 
 function App() {
