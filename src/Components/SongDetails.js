@@ -1,3 +1,4 @@
+import { ConstructionOutlined } from "@mui/icons-material";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -9,12 +10,14 @@ function SongDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${URL}/songs/${id}`).then((response) => {
-      setSong(response.data).catch((error) => console.warn(error));
-    });
+    axios
+      .get(`${URL}/songs/${id}`)
+      .then((response) => setSong(response.data))
+      .catch((error) => console.warn(error));
   }, [id, URL]);
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
+    event.preventDefault();
     axios.delete(`${URL}/songs/${id}`).then(() => navigate("/songs"));
   };
 
