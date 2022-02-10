@@ -1,16 +1,15 @@
-
 import { Route, Routes } from "react-router-dom";
 import Songs from "./Components/Songs";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import FootBar from "./Components/FootBar";
 import New from "./Pages/New";
-
+import Show from "./Pages/Show";
 
 function App() {
   return (
     <div>
-       <NavBar />
+      <NavBar />
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -32,10 +31,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs />} />
         <Route path="/new" element={<New />} />
-
+        <Route path="/songs/:id" element={<Show />} />
       </Routes>
       <FootBar />
- 
     </div>
   );
 }
