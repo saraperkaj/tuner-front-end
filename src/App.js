@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import FootBar from "./Components/FootBar";
 import New from "./Pages/New";
+import Search from "./Pages/Search";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs />} />
         <Route path="/new" element={<New />} />
+        <Route path="/search" element={<Search />} />
 
       </Routes>
       <FootBar />

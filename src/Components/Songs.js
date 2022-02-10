@@ -8,7 +8,7 @@ function Songs() {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    axios.get(`${API}/song`).then((response) => setSongs(response.data));
+    axios.get(`${API}/songs`).then((response) => setSongs(response.data));
   }, [API]);
 
   return (

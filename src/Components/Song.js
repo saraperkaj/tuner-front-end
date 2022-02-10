@@ -1,4 +1,4 @@
-import play from "./play.png";
+import play from "../Assets/play.png";
 
 function Song({ song }) {
   return (

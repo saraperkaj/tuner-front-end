@@ -18,11 +18,10 @@ import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 // import { makeStyles} from "@mui/styles";
 
 //Importing medias from assets
-import AppLogo from "../Assets/appLogo.png"
  
 
 //React Router
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -189,11 +188,13 @@ const FootBar = () => {
             color="inherit"
             sx={{ display: "block", margin: 0 }}
           >
+            <Link to="/">
             <HomeIcon
               color="disabled"
               fontSize="large"
               sx={{ color: "white" }}
             />
+            </Link>
             <Typography variant="subtitle1">Home</Typography>
           </IconButton>
           <IconButton
@@ -204,11 +205,13 @@ const FootBar = () => {
             color="inherit"
             sx={{ display: "block", margin: 0 }}
           >
+            <Link to="/search">
             <SearchIcon
               color="disabled"
               fontSize="large"
               sx={{ color: "white" }}
             />
+            </Link>
             <Typography variant="subtitle1">Search</Typography>
           </IconButton>
           <IconButton
