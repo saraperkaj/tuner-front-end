@@ -7,6 +7,7 @@ import New from "./Pages/New";
 import Search from "./Pages/Search";
 // import "../src/App.css"
 import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/new" element={<New />} />
         <Route path="/search" element={<Search />} />
         <Route path="/songs/:id" element={<Show />} />
+        <Route path="/songs/:id/edit" element={<Edit />} />
       </Routes>
       <FootBar />
     </div>
